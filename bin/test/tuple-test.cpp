@@ -1,4 +1,4 @@
-#include "../bin/features/header files/Tuples.h"
+#include "../features/header files/Tuples.h"
 #include <cassert>
 #include <iostream>
 #include <cmath>
@@ -20,9 +20,7 @@ void TEST_TUPLE_VECTOR() {
     assert(is_Equal(test_tuple.x, 4.3));
     assert(is_Equal(test_tuple.y, -4.2));
     assert(is_Equal(test_tuple.z, 3.1));
-    assert(is_Equal(test_tuple.type, 1));
     assert(test_tuple.check_type() == 0);
-    cout << "TEST_TUPLE_VECTOR passed" << endl;
 }
 
 void TEST_TUPLE_POINT() {
@@ -31,7 +29,6 @@ void TEST_TUPLE_POINT() {
     assert(is_Equal(test_tuple.x, 4.3));
     assert(is_Equal(test_tuple.y, -4.2));
     assert(is_Equal(test_tuple.z, 3.1));
-    assert(is_Equal(test_tuple.type, 1));
     assert(test_tuple.check_type() == 1);
     cout << "TEST_TUPLE_POINT passed" << endl;
 }
