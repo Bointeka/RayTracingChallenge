@@ -16,8 +16,45 @@ Tuple::Tuple(float x, float y, float z, int type) {
     this->type = type;  
 }
 
+//Returns the type of the tuple
+    //Either a vector or a point
 bool Tuple::check_type() {
     return this->type;
+}
+
+//Checks whether two tuples are equal
+bool Tuple::operator==(const Tuple &vec2) {
+    if (is_Equal(this->x, vec2.x) == 0) 
+        return false;
+    else if (is_Equal(this->y, vec2.y) == 0)
+        return false;
+    else if (is_Equal(this->z, vec2.z) == 0)
+        return false;
+    else if (this->type != vec2.type)
+        return false;
+    else
+        return true;
+}
+
+//Checks whether two tuples are not equal to each other
+bool Tuple::operator!=(const Tuple &vec2) {
+    if (is_Equal(this->x, vec2.x) == 0) 
+        return true;
+    else if (is_Equal(this->y, vec2.y) == 0)
+        return true;
+    else if (is_Equal(this->z, vec2.z) == 0)
+        return true;
+    else if (this->type != vec2.type)
+        return true;
+    else
+        return false;
+}
+
+//Checks whether two floats are equal
+int Tuple::is_Equal(float x, float y) {
+    if (abs(x - y) <= 0.000000005)
+        return 1;
+    return 0;
 }
 
 Point::Point() {
