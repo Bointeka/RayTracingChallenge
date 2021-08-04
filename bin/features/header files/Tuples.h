@@ -13,16 +13,15 @@ namespace Features {
         
     };
 
-    class Point {
+    class Point : public Tuple{
         public:
         Tuple tuple;
             Point();
             Point(float x, float y, float z);
     };
 
-    class Vector {
+    class Vector : public Tuple {
         public:
-            Tuple tuple;
             Vector();
             Vector(float x, float y, float z);
     };
