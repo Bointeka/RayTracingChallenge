@@ -1,4 +1,3 @@
-test/tuple-test.o
-bin/features/source files/tuples/Tuple.o
-test/tst.exe
+test_exe
+bin/obj
 .vscode/launch.json
