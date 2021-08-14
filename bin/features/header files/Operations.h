@@ -1,5 +1,9 @@
+#ifndef OPERATIONS_H
+#define OPERATIONS_H
 #include <cmath>
+#include "./Tuples.h"
 
+using namespace Features;
 //Collection of static functions used to manipulate Vectors and Points
 Tuple* tuple_sum(Tuple tup1, Tuple tup2){
     int type = tup1.type + tup2.type;
@@ -21,7 +25,7 @@ Tuple* tuple_sub(Tuple tup1, Tuple tup2){
         return nullptr;
     }
 }
-Tuple negate(Tuple tup1) {
+Tuple negate_tup(Tuple tup1) {
     return Vector(-tup1.x, -tup1.y, -tup1.z);
 }
 Tuple scalar(Tuple tup1, float scalar) {
@@ -42,3 +46,4 @@ Tuple cross(Tuple tup1, Tuple tup2) {
                     (tup1.z * tup2.x) - (tup1.x * tup2.z),
                     (tup1.x * tup2.y) - (tup1.y * tup2.x));
 }
+#endif

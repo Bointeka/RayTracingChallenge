@@ -1,3 +1,5 @@
+#ifndef TUPLES_H
+#define TUPLES_H
 #include <cmath>
 
 namespace Features {
@@ -29,3 +31,4 @@ namespace Features {
             Vector(float x, float y, float z);
     };
 }
+#endif

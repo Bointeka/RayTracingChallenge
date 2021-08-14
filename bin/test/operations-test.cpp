@@ -46,7 +46,7 @@ void TEST_TUPLE_SUBTRACT() {
 void TEST_TUPLE_NEGATE() {
     cout << "TESTING TUPLE NEGATE" << endl;
     Vector vec1 = Vector();
-    assert(negate(vec1) == Vector(-1,-1,-1));
+    assert(negate_tup(vec1) == Vector(-1,-1,-1));
     cout << "TEST PASSED" << endl;
 }
 

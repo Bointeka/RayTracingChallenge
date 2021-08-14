@@ -1,5 +1,5 @@
 #include "../header files/Tuples.h"
-
+#include <stdlib.h>
 using namespace Features;
 
 Tuple::Tuple() {
