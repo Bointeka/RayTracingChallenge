@@ -15,8 +15,7 @@ g++ -g -c ../test/operations-test.cpp
 
 REM linking object files and test files
 g++ -o ../../test_exe/tuple-test tuple-test.o Tuple.o
-g++ -o ../../test_exe/operation-test operations-test.o Opertaions.o
+g++ -o ../../test_exe/operation-test operations-test.o Operations.o Tuple.o
 
 REM Run tests
 @echo on
-START ../../test_exe/tuple-test.exe
