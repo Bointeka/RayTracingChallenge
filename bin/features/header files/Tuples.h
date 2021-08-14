@@ -19,7 +19,6 @@ namespace Features {
 
     class Point : public Tuple{
         public:
-        Tuple tuple;
             Point();
             Point(float x, float y, float z);
     };
