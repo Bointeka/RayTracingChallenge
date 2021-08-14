@@ -12,9 +12,14 @@ void TEST_TUPLE_ADD() {
     Vector vec1 = Vector();
     Vector vec2 = Vector();
     Point point1 = Point();
-    assert(tuple_sum(vec1, vec2) == Vector(2,2,2));
-    assert(tuple_sum(vec1, point1) == Point(1,1,1));
-    assert(tuple_sum(point1, point1) == NULL);
+    Tuple *sum = tuple_sum(vec1, vec2);
+    assert(*sum == Vector(2,2,2));
+    delete sum;
+    sum = tuple_sum(vec1, point1);
+    assert(*sum == Point(1,1,1));
+    delete sum;   
+    sum = tuple_sum(point1, point1);
+    assert(sum == nullptr);    
     cout << "TEST PASSED" << endl;
 }
 
@@ -24,10 +29,17 @@ void TEST_TUPLE_SUBTRACT() {
     Vector vec2 = Vector();
     Point point1 = Point();
     Point point2 = Point(1,1,1);
-    assert(tuple_sub(vec1, vec2) == Vector(0,0,0));
-    assert(tuple_sub(point1, vec1) == Point(0,0,0));
-    assert(tuple_sub(point1, point2) == Vector(-1,-1,-1));
-    assert(tuple_sub(vec1, point1) == NULL);
+    Tuple *sub = tuple_sub(vec1, vec2);
+    assert(*sub == Vector(0,0,0));
+    delete sub;
+    sub = tuple_sub(point1, vec1);
+    assert(*sub == Point(0,0,0));
+    delete sub;
+    sub = tuple_sub(point1, point2);
+    assert(*sub == Vector(-1,-1,-1));
+    delete sub;
+    sub = tuple_sub(vec1, point1);
+    assert(sub == nullptr);
     cout << "TEST PASSED" << endl;   
 }
 
@@ -41,14 +53,14 @@ void TEST_TUPLE_NEGATE() {
 void TEST_TUPLE_SCALAR() {
     cout << "TESTING TUPLE SCALAR" << endl;
     Vector vec1 = Vector();
-    assert(vec1.scalar(2) == Vector(2,2,2));
-    assert(vec1.scalar(0.5) == Vector(0.5, 0.5, 0.5));
+    assert(scalar(vec1, 2) == Vector(2,2,2));
+    assert(scalar(vec1, 0.5) == Vector(0.5, 0.5, 0.5));
     cout << "TEST PASSED" << endl;
 }
 
 void TEST_TUPLE_MAGNITUDE() {
     cout << "TESTING TUPLE MAGNITUDE" << endl;
-    Vector vec1 = Vector(1,2,1);
+    Vector vec1 = Vector(2,2,1);
     assert(magnitude(vec1) == 3);
     cout << "TEST PASSED" << endl;
 }
@@ -56,8 +68,8 @@ void TEST_TUPLE_MAGNITUDE() {
 void TEST_TUPLE_NORMALIZATION() {
     cout << "TESTING TUPLE NORMALIZATION" << endl;
     Vector vec1 = Vector(1,2,1);
-    float magnitude = magnitude(vec1);
-    assert(normalize(vec1) == Vector(1 / magnitude, 2 / magnitude, 3 / magnitude));
+    float mag = magnitude(vec1);
+    assert(normalize(vec1) == Vector(1 / mag, 2 / mag, 3 / mag));
     cout << "TEST PASSED" << endl;
 }
 
