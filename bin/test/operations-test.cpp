@@ -12,14 +12,9 @@ void TEST_TUPLE_ADD() {
     Vector vec1 = Vector();
     Vector vec2 = Vector();
     Point point1 = Point();
-    Tuple *sum = tuple_sum(vec1, vec2);
-    assert(*sum == Vector(2,2,2));
-    delete sum;
-    sum = tuple_sum(vec1, point1);
-    assert(*sum == Point(1,1,1));
-    delete sum;   
-    sum = tuple_sum(point1, point1);
-    assert(sum == nullptr);    
+    assert(tuple_sum(vec1, vec2) == Vector(2,2,2));
+    assert(tuple_sum(vec1, point1) == Point(1,1,1));
+    assert(tuple_sum(point1, point1) == 0);    
     cout << "TEST PASSED" << endl;
 }
 
@@ -29,17 +24,10 @@ void TEST_TUPLE_SUBTRACT() {
     Vector vec2 = Vector();
     Point point1 = Point();
     Point point2 = Point(1,1,1);
-    Tuple *sub = tuple_sub(vec1, vec2);
-    assert(*sub == Vector(0,0,0));
-    delete sub;
-    sub = tuple_sub(point1, vec1);
-    assert(*sub == Point(-1,-1,-1));
-    delete sub;
-    sub = tuple_sub(point1, point2);
-    assert(*sub == Vector(-1,-1,-1));
-    delete sub;
-    sub = tuple_sub(vec1, point1);
-    assert(sub == nullptr);
+    assert(tuple_sub(vec1, vec2) == Vector(0,0,0));
+    assert(tuple_sub(point1, vec1) == Point(-1,-1,-1));
+    assert(tuple_sub(point1, point2) == Vector(-1,-1,-1));
+    assert(tuple_sub(vec1, point1) == 0);
     cout << "TEST PASSED" << endl;   
 }
 
