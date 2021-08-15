@@ -33,7 +33,7 @@ void TEST_TUPLE_SUBTRACT() {
     assert(*sub == Vector(0,0,0));
     delete sub;
     sub = tuple_sub(point1, vec1);
-    assert(*sub == Point(0,0,0));
+    assert(*sub == Point(-1,-1,-1));
     delete sub;
     sub = tuple_sub(point1, point2);
     assert(*sub == Vector(-1,-1,-1));
@@ -69,7 +69,7 @@ void TEST_TUPLE_NORMALIZATION() {
     cout << "TESTING TUPLE NORMALIZATION" << endl;
     Vector vec1 = Vector(1,2,1);
     float mag = magnitude(vec1);
-    assert(normalize(vec1) == Vector(1 / mag, 2 / mag, 3 / mag));
+    assert(normalize(vec1) == Vector(1 / mag, 2 / mag, 1 / mag));
     cout << "TEST PASSED" << endl;
 }
 
