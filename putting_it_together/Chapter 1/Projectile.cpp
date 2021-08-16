@@ -1,4 +1,3 @@
-#include "../../bin/features/header files/Operations.h"
 #include ".\Projectile.h"
 using namespace Chapter1;
 Projectile Chapter1::tick(Projectile proj, Environment env) {
