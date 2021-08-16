@@ -1,3 +1,3 @@
-test_exe
-bin/obj
-.vscode/launch.json
+*.o
+*.exe
+launch.json
