@@ -11,9 +11,9 @@ int main() {
     cout << "Position" << proj << " | tick:" << count << endl;
     Environment environment = Environment(Vector(0, -0.1, 0), Vector(-0.01, 0, 0));
     do {
-    proj = tick(proj, environment);
-    cout << "Position" << proj << " | tick:" << count << endl;
-    count += 1;
+        proj = tick(proj, environment);
+        cout << "Position" << proj << " | tick:" << count << endl;
+        count += 1;
     } while (proj.position.y > 0);
     return 1;
 }
